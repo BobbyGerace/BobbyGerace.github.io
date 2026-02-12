@@ -10,7 +10,7 @@ export class GameData {
 
     if (totalWords > 0 && this.wordList.length !== totalWords) {
       console.warn(
-        `Word list does not match expected length. Expected ${this.totalWords} but got ${this.wordList.length}`,
+        `Word list does not match expected length. Expected ${this.totalWords} but got ${this.wordList.length}`
       );
     }
   }
@@ -33,8 +33,8 @@ export class GameData {
   static async preloadDataBank() {
     if (cachedGameList && cachedWordList) return;
 
-    const wordsPromise = fetch("/dictionary.csv").then((res) => res.text());
-    const gamesPromise = fetch("/game_stats.csv").then((res) => res.text());
+    const wordsPromise = fetch("dictionary.csv").then((res) => res.text());
+    const gamesPromise = fetch("game_stats.csv").then((res) => res.text());
 
     // Simulate long load time
     // await new Promise((resolve) => setTimeout(resolve, 10000));
