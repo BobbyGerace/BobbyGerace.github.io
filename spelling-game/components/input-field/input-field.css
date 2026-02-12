@@ -1,0 +1,80 @@
+sg-input-field {
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  line-height: 1.2;
+  height: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+sg-input-field::after {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  margin: 0.1em;
+  border-right: 2px solid var(--highlight);
+  animation: blink 1s step-start 0s infinite;
+}
+
+.input-field__letter.input-field__letter--central {
+  color: var(--highlight);
+}
+
+.input-field__letter.input-field__letter--happy {
+  animation: happy-letter;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+.input-field__letter.input-field__letter--happy {
+  animation: happy-letter;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+}
+
+.input-field__letter.input-field__letter--sad {
+  animation-name: shake;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes happy-letter {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-3px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
